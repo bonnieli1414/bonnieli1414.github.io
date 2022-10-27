@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  
+  <title>當VSCode出現這個錯誤訊息 「因為這個系統上已停用指令碼執行，所以無法載入」 | Bonnie&#39;s Hexo</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="解決辦法:1. 螢幕左下角有一個”在這裡輸入文字來搜尋”，輸入 PowerShell ，選擇以系統管理員身分執行ISE。   2. 打開 PowerShell ISE ，輸入 get-executionpolicy 可以查看目前的執行原則。這時候會看到 Restricted(系統預設)。 3. 輸入 set-executionpolicy remotesigned ，在執行時會跳出警告視窗通知你">
+<meta property="og:type" content="article">
+<meta property="og:title" content="當VSCode出現這個錯誤訊息 「因為這個系統上已停用指令碼執行，所以無法載入」">
+<meta property="og:url" content="https://bonnieli1414.github.io/2022/10/27/%E6%88%91%E7%9A%84%E7%AC%AC%E4%B8%80%E7%AF%87%E9%83%A8%E8%90%BD%E6%A0%BC%E6%96%87%E7%AB%A0/index.html">
+<meta property="og:site_name" content="Bonnie&#39;s Hexo">
+<meta property="og:description" content="解決辦法:1. 螢幕左下角有一個”在這裡輸入文字來搜尋”，輸入 PowerShell ，選擇以系統管理員身分執行ISE。   2. 打開 PowerShell ISE ，輸入 get-executionpolicy 可以查看目前的執行原則。這時候會看到 Restricted(系統預設)。 3. 輸入 set-executionpolicy remotesigned ，在執行時會跳出警告視窗通知你">
+<meta property="og:locale" content="zh_TW">
+<meta property="og:image" content="https://i.imgur.com/EWql5yl.png">
+<meta property="article:published_time" content="2022-10-27T12:02:29.000Z">
+<meta property="article:modified_time" content="2022-10-27T13:54:57.339Z">
+<meta property="article:author" content="Bonnie">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://i.imgur.com/EWql5yl.png">
+  
+    <link rel="alternate" href="/atom.xml" title="Bonnie's Hexo" type="application/atom+xml">
+  
+  
+    <link rel="shortcut icon" href="/favicon.png">
+  
+  
+    
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/typeface-source-code-pro@0.0.71/index.min.css">
+
+  
+  
+<link rel="stylesheet" href="/css/style.css">
+
+  
+    
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.min.css">
+
+  
+<meta name="generator" content="Hexo 6.3.0"></head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">Bonnie&#39;s Hexo</a>
+      </h1>
+      
+        <h2 id="subtitle-wrap">
+          <a href="/" id="subtitle">你不需要一開始就很厲害，但必須開始才有辦法很厲害</a>
+        </h2>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="搜尋"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="搜尋"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="https://bonnieli1414.github.io"></form>
+      </div>
+    </div>
+  </div>
+</header>
+
+      <div class="outer">
+        <section id="main"><article id="post-我的第一篇部落格文章" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2022/10/27/%E6%88%91%E7%9A%84%E7%AC%AC%E4%B8%80%E7%AF%87%E9%83%A8%E8%90%BD%E6%A0%BC%E6%96%87%E7%AB%A0/" class="article-date">
+  <time class="dt-published" datetime="2022-10-27T12:02:29.000Z" itemprop="datePublished">2022-10-27</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="p-name article-title" itemprop="headline name">
+      當VSCode出現這個錯誤訊息 「因為這個系統上已停用指令碼執行，所以無法載入」
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <p><img src="https://i.imgur.com/EWql5yl.png"></p>
+<h2 id="解決辦法"><a href="#解決辦法" class="headerlink" title="解決辦法:"></a>解決辦法:</h2><p><strong>1. 螢幕左下角有一個”在這裡輸入文字來搜尋”，輸入 <code>PowerShell</code> ，選擇以系統管理員身分執行ISE。</strong></p>
+<img src=https://i.imgur.com/EDH47bN.png  width=60% />
+
+<p><strong>2. 打開 PowerShell ISE ，輸入 <code>get-executionpolicy</code> 可以查看目前的執行原則。這時候會看到 Restricted(系統預設)。</strong></p>
+<p><strong>3. 輸入 <code>set-executionpolicy remotesigned</code> ，在執行時會跳出警告視窗通知你要是否要改變，按下”是”。</strong></p>
+<p><strong>4. 輸入 <code>get-executionpolicy</code> 可以查看目前的執行原則，會改成 remotesigned”</strong></p>
+<img src=https://i.imgur.com/AlefL99.png  width=60% />
+
+
+<hr>
+
+<h2 id="總結"><a href="#總結" class="headerlink" title="總結"></a>總結</h2><h3 id="PowerShell-有4種執行原則："><a href="#PowerShell-有4種執行原則：" class="headerlink" title="PowerShell 有4種執行原則："></a>PowerShell 有4種執行原則：</h3><ol>
+<li><strong>Restricted</strong>：所有PowerShell Script皆無法執行。(Windows系統預設)</li>
+<li><strong>AllSigned</strong>：所有PowerShell Script都要經過受信任的發行者簽屬過後才可執行。</li>
+<li><strong>RemoteSigned</strong>：針對從異地下載下來的PowerShell Script需要經過受信任的發行者簽屬過後才可執行，本機的PowerShell Script可直接執行。</li>
+<li><strong>Unrestricted</strong>：無限制，所有PowerShell Script皆可執行。</li>
+</ol>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://bonnieli1414.github.io/2022/10/27/%E6%88%91%E7%9A%84%E7%AC%AC%E4%B8%80%E7%AF%87%E9%83%A8%E8%90%BD%E6%A0%BC%E6%96%87%E7%AB%A0/" data-id="cl9r8lj6k00005wwaad1x27is" data-title="當VSCode出現這個錯誤訊息 「因為這個系統上已停用指令碼執行，所以無法載入」" class="article-share-link">Share</a>
+      
+      
+      
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+  
+    <a href="/2022/10/27/hello-world/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">Hello World</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+
+  
+    
+
+  
+    
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">彙整</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/10/">十月 2022</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">最新文章</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2022/10/27/%E6%88%91%E7%9A%84%E7%AC%AC%E4%B8%80%E7%AF%87%E9%83%A8%E8%90%BD%E6%A0%BC%E6%96%87%E7%AB%A0/">當VSCode出現這個錯誤訊息 「因為這個系統上已停用指令碼執行，所以無法載入」</a>
+          </li>
+        
+          <li>
+            <a href="/2022/10/27/hello-world/">Hello World</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      
+      &copy; 2022 Bonnie<br>
+      Powered by <a href="https://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+
+<script src="/js/jquery-3.4.1.min.js"></script>
+
+
+
+  
+<script src="/fancybox/jquery.fancybox.min.js"></script>
+
+
+
+
+<script src="/js/script.js"></script>
+
+
+
+
+
+  </div>
+</body>
+</html>

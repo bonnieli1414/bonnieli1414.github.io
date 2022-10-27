@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <title>Bonnie&#39;s Hexo</title>
+  
+  <subtitle>你不需要一開始就很厲害，但必須開始才有辦法很厲害</subtitle>
+  <link href="https://bonnieli1414.github.io/atom.xml" rel="self"/>
+  
+  <link href="https://bonnieli1414.github.io/"/>
+  <updated>2022-10-27T13:54:57.339Z</updated>
+  <id>https://bonnieli1414.github.io/</id>
+  
+  <author>
+    <name>Bonnie</name>
+    
+  </author>
+  
+  <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>當VSCode出現這個錯誤訊息 「因為這個系統上已停用指令碼執行，所以無法載入」</title>
+    <link href="https://bonnieli1414.github.io/2022/10/27/%E6%88%91%E7%9A%84%E7%AC%AC%E4%B8%80%E7%AF%87%E9%83%A8%E8%90%BD%E6%A0%BC%E6%96%87%E7%AB%A0/"/>
+    <id>https://bonnieli1414.github.io/2022/10/27/%E6%88%91%E7%9A%84%E7%AC%AC%E4%B8%80%E7%AF%87%E9%83%A8%E8%90%BD%E6%A0%BC%E6%96%87%E7%AB%A0/</id>
+    <published>2022-10-27T12:02:29.000Z</published>
+    <updated>2022-10-27T13:54:57.339Z</updated>
+    
+    <content type="html"><![CDATA[<p><img src="https://i.imgur.com/EWql5yl.png"></p><h2 id="解決辦法"><a href="#解決辦法" class="headerlink" title="解決辦法:"></a>解決辦法:</h2><p><strong>1. 螢幕左下角有一個”在這裡輸入文字來搜尋”，輸入 <code>PowerShell</code> ，選擇以系統管理員身分執行ISE。</strong></p><img src=https://i.imgur.com/EDH47bN.png  width=60% /><p><strong>2. 打開 PowerShell ISE ，輸入 <code>get-executionpolicy</code> 可以查看目前的執行原則。這時候會看到 Restricted(系統預設)。</strong></p><p><strong>3. 輸入 <code>set-executionpolicy remotesigned</code> ，在執行時會跳出警告視窗通知你要是否要改變，按下”是”。</strong></p><p><strong>4. 輸入 <code>get-executionpolicy</code> 可以查看目前的執行原則，會改成 remotesigned”</strong></p><img src=https://i.imgur.com/AlefL99.png  width=60% /><hr><h2 id="總結"><a href="#總結" class="headerlink" title="總結"></a>總結</h2><h3 id="PowerShell-有4種執行原則："><a href="#PowerShell-有4種執行原則：" class="headerlink" title="PowerShell 有4種執行原則："></a>PowerShell 有4種執行原則：</h3><ol><li><strong>Restricted</strong>：所有PowerShell Script皆無法執行。(Windows系統預設)</li><li><strong>AllSigned</strong>：所有PowerShell Script都要經過受信任的發行者簽屬過後才可執行。</li><li><strong>RemoteSigned</strong>：針對從異地下載下來的PowerShell Script需要經過受信任的發行者簽屬過後才可執行，本機的PowerShell Script可直接執行。</li><li><strong>Unrestricted</strong>：無限制，所有PowerShell Script皆可執行。</li></ol>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;p&gt;&lt;img src=&quot;https://i.imgur.com/EWql5yl.png&quot;&gt;&lt;/p&gt;
+&lt;h2 id=&quot;解決辦法&quot;&gt;&lt;a href=&quot;#解決辦法&quot; class=&quot;headerlink&quot; title=&quot;解決辦法:&quot;&gt;&lt;/a&gt;解決辦法:&lt;/h2&gt;&lt;p&gt;&lt;strong&gt;1</summary>
+      
+    
+    
+    
+    
+  </entry>
+  
+  <entry>
+    <title>Hello World</title>
+    <link href="https://bonnieli1414.github.io/2022/10/27/hello-world/"/>
+    <id>https://bonnieli1414.github.io/2022/10/27/hello-world/</id>
+    <published>2022-10-27T11:15:16.003Z</published>
+    <updated>2022-10-27T11:15:16.003Z</updated>
+    
+    <content type="html"><![CDATA[<p>Welcome to <a href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p><h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">&quot;My New Post&quot;</span></span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/writing.html">Writing</a></p><h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/server.html">Server</a></p><h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/generating.html">Generating</a></p><h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;p&gt;Welcome to &lt;a href=&quot;https://hexo.io/&quot;&gt;Hexo&lt;/a&gt;! This is your very first post. Check &lt;a href=&quot;https://hexo.io/docs/&quot;&gt;documentation&lt;/a&gt; for</summary>
+      
+    
+    
+    
+    
+  </entry>
+  
+</feed>
