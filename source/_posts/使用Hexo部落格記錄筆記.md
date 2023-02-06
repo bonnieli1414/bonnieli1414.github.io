@@ -22,3 +22,10 @@ RSS 套件參考出處：https://ithelp.ithome.com.tw/articles/10240120
 1.建立名為username .github.io的儲存庫，username 是你在GitHub 上的用戶名，若之前已將Hexo 上傳至其他儲存庫，將該儲存庫重命名即可。
 2.將Hexo 文件夾中的文件push 到儲存庫的默認分支，默認分支通常名為main，舊一點的儲存庫可能名為master。
 參考出處：https://hexo.io/zh-cn/docs/github-pages
+
+補充，關於還原備份到 Github 另外一個分支的 Hexo 資料
+1.開新分支
+2.將寫文章用的 Markdown 以及 Hexo 的設定檔儲存至另一分支
+
+參考出處:https://ithelp.ithome.com.tw/articles/10279635
+        https://www.dazhuanlan.com/imdq/topics/965923
