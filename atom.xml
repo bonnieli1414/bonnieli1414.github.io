@@ -6,7 +6,7 @@
   <link href="https://bonnieli1414.github.io/atom.xml" rel="self"/>
   
   <link href="https://bonnieli1414.github.io/"/>
-  <updated>2023-02-06T16:10:05.903Z</updated>
+  <updated>2023-02-06T16:43:23.933Z</updated>
   <id>https://bonnieli1414.github.io/</id>
   
   <author>
@@ -15,6 +15,32 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Hello Vue</title>
+    <link href="https://bonnieli1414.github.io/2023/02/07/hello-vue/"/>
+    <id>https://bonnieli1414.github.io/2023/02/07/hello-vue/</id>
+    <published>2023-02-06T16:29:20.000Z</published>
+    <updated>2023-02-06T16:43:23.933Z</updated>
+    
+    <content type="html"><![CDATA[<pre><code>    //寫法1：等有需要時再mount到某節點上    const vm = Vue.createApp(&#123;        data() &#123;            return &#123;                message: &quot;&quot;            &#125;        &#125;    &#125;)    vm.mount(&quot;#app&quot;);    // 寫法2    const vm = &#123;        data() &#123;            return &#123;                message: &quot;&quot;            &#125;        &#125;    &#125;    Vue.createApp(vm).mount(&quot;#app&quot;);    // 寫法3    Vue.createApp(&#123;        data()&#123;            return &#123;                message:&quot;&quot;            &#125;        &#125;    &#125;).mount(&quot;#app&quot;);    // 寫法4:js物件是傳址特性，透過...淺拷貝    const dataObj = &#123;        message: &quot;&quot;    &#125;    const vm = Vue.createApp(&#123;        data() &#123;            return &#123;...dataObj&#125;        &#125;    &#125;)    vm.mount(&quot;#app&quot;);</code></pre><p><a href="https://github.com/bonnieli1414/Vue_notion/blob/main/01.Vue_option.html">Github</a></p>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;pre&gt;&lt;code&gt;    //寫法1：等有需要時再mount到某節點上
+    const vm = Vue.createApp(&amp;#123;
+        data() &amp;#123;
+            return &amp;#123;
+                me</summary>
+      
+    
+    
+    
+    
+    <category term="Vue 起手式：Vue select option" scheme="https://bonnieli1414.github.io/tags/Vue-%E8%B5%B7%E6%89%8B%E5%BC%8F%EF%BC%9AVue-select-option/"/>
+    
+  </entry>
   
   <entry>
     <title>因為這個系統上已停用指令碼執行，所以無法載入</title>
